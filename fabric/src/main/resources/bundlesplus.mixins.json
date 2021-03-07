@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "dev.adox.bundlesplus.fabric.mixin",
+  "minVersion": "0.7.11",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "client": [
+    "MixinAbstractContainerScreen"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

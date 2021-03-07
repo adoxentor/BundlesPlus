@@ -3,7 +3,7 @@ plugins {
 }
 
 minecraft {
-    accessWidener = file("src/main/resources/lightoverlay.accesswidener")
+    accessWidener = file("src/main/resources/bundlesplus.accesswidener")
 }
 
 architectury {
@@ -25,6 +25,16 @@ configurations {
 
 repositories {
     mavenLocal()
+    maven {url "https://maven.misterpemodder.com/libs-release/"}
+    maven { url "https://maven.shedaniel.me/" }
+    maven { url "https://maven.terraformersmc.com/releases/" }
+    maven {
+        url "https://www.cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+
 }
 
 dependencies {
@@ -36,10 +46,23 @@ dependencies {
     modImplementation("me.shedaniel.cloth:cloth-config-fabric:${rootProject.cloth_config_version}") {
         exclude(group: "net.fabricmc.fabric-api")
     }
-    modImplementation("io.github.prospector:modmenu:${rootProject.modmenu_version}") {
+    modImplementation("com.terraformersmc:modmenu:${rootProject.modmenu_version}") {
         transitive = false
     }
-    modCompile("me.shedaniel:architectury:${rootProject.architectury_version}:fabric")
+
+    modCompile("me.shedaniel:architectury-fabric:${rootProject.architectury_version}")
+    modCompile("com.misterpemodder:shulkerboxtooltip:${rootProject.shulkerboxtooltip_version}"){
+//        transitive = false
+        exclude(group: "io.github.prospector")
+        exclude(group: "me.shedaniel.cloth")
+    }
+    modCompileOnly("me.shedaniel:RoughlyEnoughItems-api:5.10.184")
+    modRuntime("me.shedaniel:RoughlyEnoughItems:5.10.184")
+
+    modCompile('curse.maven:not-enough-crashes-353890:3226331'){
+        transitive = false
+
+    }
 
     implementation(project(path: ":common")) {
         transitive = false
@@ -53,7 +76,7 @@ dependencies {
 }
 
 shadowJar {
-    relocate "me.shedaniel.lightoverlay.common", "me.shedaniel.lightoverlay.common.fabric"
+    relocate "dev.adox.bundlesplus.common", "dev.adox.bundlesplus.common.fabric"
 
     configurations = [project.configurations.shadow]
     classifier "shadow"

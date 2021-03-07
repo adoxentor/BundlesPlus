@@ -6,6 +6,10 @@ dependencies {
     modCompileOnly("me.shedaniel.cloth:cloth-config:${rootProject.cloth_config_version}") {
         exclude(group: "net.fabricmc.fabric-api")
     }
+    modApi "me.shedaniel:architectury:${rootProject.architectury_version}"
+
+}
+minecraft {
 }
 
 architectury {

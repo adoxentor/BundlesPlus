@@ -1,25 +1,25 @@
 modLoader = "javafml"
 loaderVersion = "[33,)"
-issueTrackerURL = "https://github.com/shedaniel/LightOverlay/issues/" #optional
+issueTrackerURL = "https://www.curseforge.com/minecraft/mc-mods/bundles-plus/" #optional
 logoFile = "icon.png"
-authors = "shedaniel"
+authors = "adoxentor,JimiIT92"
 license = "Apache-2.0"
 [[mods]]
-modId = "lightoverlay"
+modId = "bundlesplus"
 version = "${version}"
-displayName = "Light Overlay"
+displayName = "Bundles Plus"
 description = '''
-To provide users with NEI-like light overlay.
+Bundles Plus
 '''
 
-[[dependencies.lightoverlay]]
+[[dependencies.bundlesplus]]
 modId = "cloth-config"
 mandatory = true
 versionRange = "[4.10.13,)"
 ordering = "NONE"
 side = "CLIENT"
 
-[[dependencies.lightoverlay]]
+[[dependencies.bundlesplus]]
 modId = "architectury"
 mandatory = true
 versionRange = "[1.5.112,)"

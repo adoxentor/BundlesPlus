@@ -1,0 +1,461 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#minecraft:shulker_boxes",
+      "required": false
+    },
+    {
+      "id": "minecraft:shulker_box",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:iron_shulker_box_white",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:iron_shulker_box_orange",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:iron_shulker_box_magenta",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:iron_shulker_box_light_blue",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:iron_shulker_box_yellow",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:iron_shulker_box_lime",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:iron_shulker_box_pink",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:iron_shulker_box_gray",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:iron_shulker_box_light_gray",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:iron_shulker_box_cyan",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:iron_shulker_box_purple",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:iron_shulker_box_blue",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:iron_shulker_box_brown",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:iron_shulker_box_green",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:iron_shulker_box_red",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:iron_shulker_box_black",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:gold_shulker_box_white",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:gold_shulker_box_orange",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:gold_shulker_box_magenta",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:gold_shulker_box_light_blue",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:gold_shulker_box_yellow",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:gold_shulker_box_lime",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:gold_shulker_box_pink",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:gold_shulker_box_gray",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:gold_shulker_box_light_gray",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:gold_shulker_box_cyan",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:gold_shulker_box_purple",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:gold_shulker_box_blue",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:gold_shulker_box_brown",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:gold_shulker_box_green",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:gold_shulker_box_red",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:gold_shulker_box_black",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:diamond_shulker_box_white",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:diamond_shulker_box_orange",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:diamond_shulker_box_magenta",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:diamond_shulker_box_light_blue",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:diamond_shulker_box_yellow",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:diamond_shulker_box_lime",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:diamond_shulker_box_pink",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:diamond_shulker_box_gray",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:diamond_shulker_box_light_gray",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:diamond_shulker_box_cyan",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:diamond_shulker_box_purple",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:diamond_shulker_box_blue",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:diamond_shulker_box_brown",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:diamond_shulker_box_green",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:diamond_shulker_box_red",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:diamond_shulker_box_black",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:copper_shulker_box_white",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:copper_shulker_box_orange",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:copper_shulker_box_magenta",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:copper_shulker_box_light_blue",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:copper_shulker_box_yellow",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:copper_shulker_box_lime",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:copper_shulker_box_pink",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:copper_shulker_box_gray",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:copper_shulker_box_light_gray",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:copper_shulker_box_cyan",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:copper_shulker_box_purple",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:copper_shulker_box_blue",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:copper_shulker_box_brown",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:copper_shulker_box_green",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:copper_shulker_box_red",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:copper_shulker_box_black",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:silver_shulker_box_white",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:silver_shulker_box_orange",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:silver_shulker_box_magenta",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:silver_shulker_box_light_blue",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:silver_shulker_box_yellow",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:silver_shulker_box_lime",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:silver_shulker_box_pink",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:silver_shulker_box_gray",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:silver_shulker_box_light_gray",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:silver_shulker_box_cyan",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:silver_shulker_box_purple",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:silver_shulker_box_blue",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:silver_shulker_box_brown",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:silver_shulker_box_green",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:silver_shulker_box_red",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:silver_shulker_box_black",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:crystal_shulker_box_white",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:crystal_shulker_box_orange",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:crystal_shulker_box_magenta",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:crystal_shulker_box_light_blue",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:crystal_shulker_box_yellow",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:crystal_shulker_box_lime",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:crystal_shulker_box_pink",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:crystal_shulker_box_gray",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:crystal_shulker_box_light_gray",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:crystal_shulker_box_cyan",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:crystal_shulker_box_purple",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:crystal_shulker_box_blue",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:crystal_shulker_box_brown",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:crystal_shulker_box_green",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:crystal_shulker_box_red",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:crystal_shulker_box_black",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:obsidian_shulker_box_white",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:obsidian_shulker_box_orange",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:obsidian_shulker_box_magenta",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:obsidian_shulker_box_light_blue",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:obsidian_shulker_box_yellow",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:obsidian_shulker_box_lime",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:obsidian_shulker_box_pink",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:obsidian_shulker_box_gray",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:obsidian_shulker_box_light_gray",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:obsidian_shulker_box_cyan",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:obsidian_shulker_box_purple",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:obsidian_shulker_box_blue",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:obsidian_shulker_box_brown",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:obsidian_shulker_box_green",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:obsidian_shulker_box_red",
+      "required": false
+    },
+    {
+      "id": "ironshulkerbox:obsidian_shulker_box_black",
+      "required": false
+    }
+  ]
+}

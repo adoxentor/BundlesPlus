@@ -1,4 +1,4 @@
-# LightOverlay
+# BundlesPlus
 
 Fabric and Forge are split into modules, and we merge it afterwards
 

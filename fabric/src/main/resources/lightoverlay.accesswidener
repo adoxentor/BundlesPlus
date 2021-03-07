@@ -1,6 +1,0 @@
-accessWidener	v1  named
-accessible field net/minecraft/network/protocol/game/ClientboundSectionBlocksUpdatePacket sectionPos Lnet/minecraft/core/SectionPos;
-accessible field net/minecraft/client/renderer/culling/Frustum camX D
-accessible field net/minecraft/client/renderer/culling/Frustum camY D
-accessible field net/minecraft/client/renderer/culling/Frustum camZ D
-accessible field net/minecraft/client/renderer/culling/Frustum frustumData [Lcom/mojang/math/Vector4f;

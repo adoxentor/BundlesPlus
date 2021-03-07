@@ -7,7 +7,8 @@ pluginManagement {
     }
 }
 
-rootProject.name = "light-overlay"
+rootProject.name = "bundlesplus"
+
 
 include("common")
 include("fabric")

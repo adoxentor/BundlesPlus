@@ -11,8 +11,8 @@ buildscript {
 import java.nio.file.*
 
 plugins {
-    id "architectury-plugin" version "3.0.76"
-    id "forgified-fabric-loom" version "0.6.67" apply false
+    id "architectury-plugin" version "3.0.95"
+    id "forgified-fabric-loom" version "0.6.74" apply false
 }
 
 architectury {
@@ -31,7 +31,7 @@ allprojects {
     apply plugin: "java"
     apply plugin: "architectury-plugin"
 
-    group "me.shedaniel"
+    group "adox.dev"
     archivesBaseName = rootProject.name
     version = rootProject.mod_version
 

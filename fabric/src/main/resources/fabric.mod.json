@@ -1,35 +1,38 @@
 {
   "schemaVersion": 1,
-  "id": "lightoverlay",
-  "name": "Light Overlay",
-  "description": "To provide users with NEI-like light overlay.",
+  "id": "bundlesplus",
+  "name": "bundles plus",
+  "description": "bundles plus",
   "version": "${version}",
-  "environment": "client",
+  "environment": "*",
   "authors": [
-    "shedaniel"
+    "adoxentor",
+    "JimiIT92"
   ],
   "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/light-overlay",
-    "sources": "https://github.com/shedaniel/LightOverlay-Fabric",
-    "issues": "https://github.com/shedaniel/LightOverlay-Fabric/issues"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/bundles-plus/"
   },
   "entrypoints": {
+    "main": [
+      "dev.adox.bundlesplus.fabric.BundlesPlusModFabric::initialize"
+    ],
     "client": [
-      "me.shedaniel.lightoverlay.fabric.LightOverlayImpl::init"
+      "dev.adox.bundlesplus.fabric.BundlesPlusModFabric::initClient"
     ],
     "modmenu": [
-      "me.shedaniel.lightoverlay.fabric.LOModMenuEntry"
+      "dev.adox.bundlesplus.fabric.BundlesPlusModMenuEntry"
+    ],
+    "shulkerboxtooltip": [
+      "dev.adox.bundlesplus.fabric.MyShulkerBoxApiImpl"
     ]
+
   },
   "license": "Apache-2.0",
   "icon": "icon.png",
   "mixins": [
-    "lightoverlay.mixins.json"
+    "bundlesplus.mixins.json"
   ],
-  "accessWidener": "lightoverlay.accesswidener",
-  "custom": {
-    "modmenu:clientsideOnly": true
-  },
+  "accessWidener": "bundlesplus.accesswidener",
   "depends": {
     "fabric": ">=0.29.1",
     "architectury": ">=1.5.112",

@@ -13,7 +13,7 @@ architectury {
 }
 
 loom {
-    mixinConfig "lightoverlay-forge.mixins.json"
+    mixinConfig "bundlesplus-forge.mixins.json"
 }
 
 processResources {
@@ -25,14 +25,39 @@ processResources {
 
 repositories {
     mavenLocal()
+    maven {
+        url "https://maven.blamejared.com"
+    }
+    maven {
+        url "https://dvs1.progwml6.com/files/maven"
+    }
+    maven {
+        url "https://minecraft.curseforge.com/api/maven/"
+    }
+    maven {
+        name "curios"
+        url "https://maven.theillusivec4.top/"
+    }
+    maven {
+        name "storagedrawers"
+        url = "https://dl.bintray.com/jaquadro/dev/"
+    }
+    maven {
+        url "https://www.cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
 }
 
 dependencies {
     minecraft("com.mojang:minecraft:${rootProject.architectury.minecraft}")
     mappings(minecraft.officialMojangMappings())
     forge("net.minecraftforge:forge:${rootProject.architectury.minecraft}-${project.forge_version}")
+
     modCompile("me.shedaniel.cloth:cloth-config-forge:${rootProject.cloth_config_version}")
-    modCompile("me.shedaniel:architectury:${rootProject.architectury_version}:forge")
+    modCompile("me.shedaniel:architectury-forge:${rootProject.architectury_version}")
+    annotationProcessor 'org.spongepowered:mixin:0.8.2:processor'
 
     implementation(project(path: ":common")) {
         transitive = false
@@ -43,10 +68,26 @@ dependencies {
     shadow(project(path: ":common", configuration: "transformProductionForge")) {
         transitive = false
     }
+
+    modCompile("vazkii.autoreglib:AutoRegLib:${arl_version}")
+//    modRuntime("vazkii.quark:Quark:r2.4-276.1408"){
+//        transitive(false)
+//    }
+//    modCompile('curse.maven:simple-planes-388908:3221688')
+//    modCompile('curse.maven:shulker-tooltip-292899:3171894')
+//    modRuntime('curse.maven:not-enough-crashes-forge-442354:3226332')
+//    modRuntime('curse.maven:iron-shulker-boxes-314911:3164598')
+
+//    compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-50:api")
+//    modRuntime("vazkii.patchouli:Patchouli:1.16.4-50")
+//
+//    compileOnly("mezz.jei:jei-1.16.4:7.6.0.58:api")
+//    modRuntime("mezz.jei:jei-1.16.4:7.6.0.58")
+
 }
 
 shadowJar {
-    relocate "me.shedaniel.lightoverlay.common", "me.shedaniel.lightoverlay.common.forge"
+    relocate "dev.adox.bundlesplus.common", "dev.adox.bundlesplus.common.forge"
     exclude "fabric.mod.json"
 
     configurations = [project.configurations.shadow]
