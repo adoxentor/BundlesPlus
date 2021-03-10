@@ -16,6 +16,10 @@ public class PlatformUtil {
         throw new AssertionError();
     }
     @ExpectPlatform
+    public static int getSlotIndex(Slot slot){
+        throw new AssertionError();
+    }
+    @ExpectPlatform
     @NotNull
     public static Supplier<Item> getBundleItem() {
         throw new AssertionError();

@@ -6,6 +6,7 @@ import dev.adox.bundlesplus.common.init.BundleResources;
 import dev.adox.bundlesplus.common.util.BundleItemUtils;
 import me.shedaniel.architectury.platform.forge.EventBuses;
 import me.shedaniel.autoconfig.AutoConfig;
+import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;

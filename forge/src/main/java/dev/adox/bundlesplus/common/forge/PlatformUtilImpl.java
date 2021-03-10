@@ -2,6 +2,7 @@ package dev.adox.bundlesplus.common.forge;
 
 import dev.adox.bundlesplus.common.PlatformUtil;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
@@ -27,7 +28,12 @@ public class PlatformUtilImpl extends PlatformUtil {
 
 
     public static Slot getHoveredSlot(AbstractContainerScreen screen){
-        return screen.getSlotUnderMouse();
+        Slot slotUnderMouse = screen.getSlotUnderMouse();
+//        if(slotUnderMouse instanceof CreativeModeInventoryScreen.SlotWrapper) {
+//            return slotUnderMouse;
+//        }
+        return slotUnderMouse;
+
     }
     @NotNull
     public static Supplier<Item> getBundleItem() {

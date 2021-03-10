@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "bundlesplus:bundle",
+      "required": false
+    },
+    {
+      "id": "#bundlesplus:shulker_ignored",
+      "required": false
+    }
+
+  ]
+}

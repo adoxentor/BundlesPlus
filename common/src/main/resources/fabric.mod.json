@@ -3,5 +3,8 @@
   "schemaVersion": 1,
   "id": "bundles-plus-core",
   "name": "Bundles Plus Core",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "mixins": [
+    "bundlesplus.common.mixins.json"
+  ]
 }

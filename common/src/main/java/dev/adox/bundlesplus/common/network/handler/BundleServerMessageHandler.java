@@ -6,7 +6,6 @@ import dev.adox.bundlesplus.common.network.message.BundleServerMessage;
 import dev.adox.bundlesplus.common.util.BundleItemUtils;
 import me.shedaniel.architectury.networking.NetworkManager;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.InventoryMenu;
@@ -14,8 +13,6 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.function.Supplier;
-
-import static net.fabricmc.api.EnvType.CLIENT;
 
 /**
  * @author JimiIT92
@@ -60,7 +57,6 @@ public class BundleServerMessageHandler {
      * @param playerEntity Player
      */
     public static void processMessage(BundleServerMessage message, Player playerEntity) {
-        assert ItemStack.matches(playerEntity.inventory.getCarried(),message.bundle);
         AbstractContainerMenu container = playerEntity.containerMenu;
         Slot slot = container.getSlot(message.slotId);
         ItemStack slotStack = slot.getItem();
@@ -73,9 +69,9 @@ public class BundleServerMessageHandler {
             if (slotStack.isEmpty()) {
                 slotStack = BundleItemUtils.removeFirstItemStack(message.bundle, message.reversed);
             } else {
-                BundleItemUtils.addItemStackToBundle(playerEntity.inventory.getCarried(), slotStack);
+                BundleItemUtils.addItemStackToBundle(message.bundle, slotStack);
             }
-            if (!playerEntity.isCreative() || !(container instanceof InventoryMenu)) {
+            if(!playerEntity.isCreative()) {
                 playerEntity.inventory.setCarried(message.bundle);
             }
         }

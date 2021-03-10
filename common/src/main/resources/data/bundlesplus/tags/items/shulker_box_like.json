@@ -7,7 +7,7 @@
         },
         {
             "id": "#us:shulkers",
-            "required": true
+            "required": false
         },
         {
             "id": "minecraft:shulker_box",

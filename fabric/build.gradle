@@ -64,10 +64,6 @@ dependencies {
         transitive = false
 
     }
-    modRuntime('curse.maven:upgraded-shulkers-454052:3228805'){
-        transitive = true
-
-    }
 
     implementation(project(path: ":common")) {
         transitive = false

@@ -12,8 +12,6 @@ import net.minecraft.world.inventory.Slot;
 
 import java.util.function.Supplier;
 
-import static net.fabricmc.api.EnvType.SERVER;
-
 /**
  * @author JimiIT92
  */
@@ -56,11 +54,11 @@ public class BundleClientMessageHandler {
      * @param player  Player
      */
     private static void processMessage(BundleClientMessage message, LocalPlayer player) {
-//        AbstractContainerMenu container = player.containerMenu;
-//        Slot slot = container.getSlot(message.slotId);
-//        slot.set(message.slotStack);
-//        slot.getStack().cooldown
+        AbstractContainerMenu container = player.containerMenu;
+        Slot slot = container.getSlot(message.slotId);
         if (message.empty) {
+            slot.set(message.slotStack);
+
             if (message.playEmptySound) {
                 player.playSound(SoundEvents.WOOL_BREAK, 1.0F, 1.0F);
             }

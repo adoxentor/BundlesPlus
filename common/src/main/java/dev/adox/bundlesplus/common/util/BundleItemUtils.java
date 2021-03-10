@@ -215,13 +215,9 @@ public final class BundleItemUtils {
         }
         getItemsFromBundle(bundle).forEach(item -> {
             if (!player.addItem(item)) {
-                if (!player.isCreative()) {
-                    player.drop(item, true);
-                }
+                player.drop(item, true);
             } else if (getItemStackWeight(item) > 0) {
-                if (!player.isCreative()) {
-                    player.drop(item, true);
-                }
+                player.drop(item, true);
             }
         });
         if (isShulkerBox(bundle)) {
