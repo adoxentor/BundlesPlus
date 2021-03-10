@@ -6,6 +6,10 @@
             "required": true
         },
         {
+            "id": "#us:shulkers",
+            "required": false
+        },
+        {
             "id": "minecraft:shulker_box",
             "required": false
         },

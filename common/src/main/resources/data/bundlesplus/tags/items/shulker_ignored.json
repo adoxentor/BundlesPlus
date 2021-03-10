@@ -1,14 +1,13 @@
 {
-  "replace": false,
-  "required": false,
-  "values": [
-    {
-      "id": "#minecraft:shulker_boxes",
-      "required": false
-    },
-    {
-      "id": "#bundlesplus:shulker_box_like",
-      "required": false
-    }
-  ]
+    "replace": false,
+    "values": [
+        {
+            "id": "#minecraft:shulker_boxes",
+            "required": true
+        },
+        {
+            "id": "#bundlesplus:shulker_box_like",
+            "required": true
+        }
+    ]
 }

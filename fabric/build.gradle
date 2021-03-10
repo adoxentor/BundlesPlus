@@ -57,10 +57,15 @@ dependencies {
         exclude(group: "me.shedaniel.cloth")
     }
     modCompileOnly("me.shedaniel:RoughlyEnoughItems-api:5.10.184")
-    modRuntime("me.shedaniel:RoughlyEnoughItems:5.10.184")
+    modRuntime("me.shedaniel:RoughlyEnoughItems:5.10.184"){
+    }
 
     modCompile('curse.maven:not-enough-crashes-353890:3226331'){
         transitive = false
+
+    }
+    modRuntime('curse.maven:upgraded-shulkers-454052:3228805'){
+        transitive = true
 
     }
 
