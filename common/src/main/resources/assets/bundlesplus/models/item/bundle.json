@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "bundlesplus:item/bundle"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "bundlesplus:bundle_full": 1.0
+      },
+      "model": "bundlesplus:item/bundle_full"
+    }
+  ]
+}
