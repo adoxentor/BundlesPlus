@@ -1,7 +1,6 @@
 package dev.adox.bundlesplus.common.util;
 
 
-import com.google.common.collect.Lists;
 import dev.adox.bundlesplus.common.BundlesPlusMod;
 import dev.adox.bundlesplus.common.PlatformUtil;
 import dev.adox.bundlesplus.common.init.BundleResources;
@@ -122,11 +121,10 @@ public final class BundleItemUtils {
     /**
      * Add an Item Stack to a Bundle
      *
-     * @param bundle   Bundle Item Stack
-     * @param stack    Item Stack to add
-     * @param reversed
+     * @param bundle Bundle Item Stack
+     * @param stack  Item Stack to add
      */
-    public static void addItemStackToBundle(ItemStack bundle, ItemStack stack, boolean reversed) {
+    public static void addItemStackToBundle(ItemStack bundle, ItemStack stack) {
         if (isShulkerBox(bundle)) {
             CompoundTag blockEntityTag = bundle.getTagElement("BlockEntityTag");
             CompoundTag compoundnbt = blockEntityTag;
@@ -139,7 +137,8 @@ public final class BundleItemUtils {
             }
             NonNullList<ItemStack> nonnulllist = PlatformUtil.loadAllItems(bundle);
 
-            for (ItemStack itemStack : reversed ? Lists.reverse(nonnulllist) : nonnulllist) {
+            for (int i = 0; i < nonnulllist.size(); i++) {
+                ItemStack itemStack = nonnulllist.get(i);
                 if (ItemStack.isSame(itemStack, stack) && itemStack.getCount() < itemStack.getMaxStackSize()) {
                     int j = itemStack.getCount() + stack.getCount();
                     int maxSize = stack.getMaxStackSize();
@@ -390,18 +389,22 @@ public final class BundleItemUtils {
                 bundle.addTagElement("BlockEntityTag", compoundnbt);
             }
 
-            NonNullList<ItemStack> nonnulllist = PlatformUtil.loadAllItems(bundle);
+            NonNullList<ItemStack> nonnulllist = NonNullList.create();
+            nonnulllist.addAll(PlatformUtil.loadAllItems(bundle));
             if (reversed) {
-                for (int i = nonnulllist.size() - 1; i >= 0; i--) {
+                for (int i = 0; i < nonnulllist.size(); i++) {
                     ItemStack itemStack = nonnulllist.get(i);
                     if (!itemStack.isEmpty()) {
-                        nonnulllist.set(i, ItemStack.EMPTY);
+                        nonnulllist.remove(i);
+                        NonNullList<ItemStack> subList = NonNullList.create();
+                        subList.addAll(nonnulllist.subList(i, nonnulllist.size()));
+                        nonnulllist = subList;
                         stack = itemStack;
                         break;
                     }
                 }
             } else {
-                for (int i = 0; i < nonnulllist.size(); i++) {
+                for (int i = nonnulllist.size() - 1; i >= 0; i--) {
                     ItemStack itemStack = nonnulllist.get(i);
                     if (!itemStack.isEmpty()) {
                         nonnulllist.set(i, ItemStack.EMPTY);

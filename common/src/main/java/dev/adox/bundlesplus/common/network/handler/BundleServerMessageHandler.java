@@ -75,7 +75,7 @@ public class BundleServerMessageHandler {
             if (slotStack.isEmpty()) {
                 slotStack = BundleItemUtils.removeFirstItemStack(message.bundle, message.reversed);
             } else {
-                BundleItemUtils.addItemStackToBundle(message.bundle, slotStack, message.reversed);
+                BundleItemUtils.addItemStackToBundle(message.bundle, slotStack);
             }
         }
         if(!playerEntity.isCreative()) {

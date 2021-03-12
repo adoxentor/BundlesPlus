@@ -25,7 +25,7 @@ public class BundleDropIn extends AbstractDropIn {
 
 	@Override
 	public ItemStack dropItemIn(Player player, ItemStack stack, ItemStack incoming) {
-		BundleItemUtils.addItemStackToBundle(stack,incoming, false);
+		BundleItemUtils.addItemStackToBundle(stack,incoming);
 		return stack;
 	}
 
