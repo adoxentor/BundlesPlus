@@ -5,9 +5,11 @@ import dev.adox.bundlesplus.common.network.message.BundleClientMessage;
 import dev.adox.bundlesplus.common.network.message.BundleServerMessage;
 import dev.adox.bundlesplus.common.util.BundleItemUtils;
 import me.shedaniel.architectury.networking.NetworkManager;
+import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 
@@ -59,13 +61,13 @@ public class BundleServerMessageHandler {
         AbstractContainerMenu container = playerEntity.containerMenu;
         ItemStack slotStack;
         Slot slot = null;
-        if (!playerEntity.isCreative()) {
+        if (playerEntity.isCreative() && (container instanceof InventoryMenu)) {
+//            playerEntity.inventory.setCarried(message.bundle);
+            slotStack = playerEntity.inventory.items.get(message.slotId);
+        } else {
             slot = container.getSlot(message.slotId);
             slotStack = slot.getItem();
             message.bundle = playerEntity.inventory.getCarried();
-        } else{
-//            playerEntity.inventory.setCarried(message.bundle);
-            slotStack = playerEntity.inventory.items.get(message.slotId);
         }
         boolean playEmptySound = false;
         if (message.empty) {
@@ -78,12 +80,12 @@ public class BundleServerMessageHandler {
                 BundleItemUtils.addItemStackToBundle(message.bundle, slotStack);
             }
         }
-        if(!playerEntity.isCreative()) {
+        if (playerEntity.isCreative() && (container instanceof InventoryMenu)) {
+//            playerEntity.inventory.setCarried(message.bundle);
+            playerEntity.inventory.items.set(message.slotId, slotStack);
+        } else {
             slot.set(slotStack);
             playerEntity.inventory.setCarried(message.bundle);
-        }else{
-//            playerEntity.inventory.setCarried(message.bundle);
-            playerEntity.inventory.items.set(message.slotId,slotStack);
         }
         if (playerEntity instanceof ServerPlayer) {
             BundleResources.NETWORK.sendToPlayer((ServerPlayer) playerEntity, new BundleClientMessage(message.bundle, message.slotId, slotStack, message.empty, playEmptySound));

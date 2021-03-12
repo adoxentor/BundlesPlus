@@ -99,15 +99,11 @@ public final class BundleEvents {
     }
 
     private static int getSlotIndex(Slot slot, LocalPlayer player, AbstractContainerMenu container) {
-//        if (player.isCreative() && container instanceof CreativeModeInventoryScreen.ItemPickerMenu) {
-//            CreativeModeInventoryScreen.ItemPickerMenu container1 = (CreativeModeInventoryScreen.ItemPickerMenu) container;
-//            return ((MixinSlot) slot).getSlot();
-//
-//        }
-//        if(slot instanceof CreativeModeInventoryScreen.SlotWrapper){
-//            return ((MixinSlot) slot).getSlot();
-//        }
-        return PlatformUtil.getSlotIndex(slot);
+        if (player.isCreative() && (container instanceof CreativeModeInventoryScreen.ItemPickerMenu)) {
+            return PlatformUtil.getSlotIndex(slot);
+
+        }
+        return slot.index;
     }
 
     /**

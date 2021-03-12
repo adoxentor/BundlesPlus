@@ -17,7 +17,7 @@
       "dev.adox.bundlesplus.fabric.BundlesPlusModFabric::initialize"
     ],
     "client": [
-      "dev.adox.bundlesplus.fabric.BundlesPlusModFabric::initClient"
+      "dev.adox.bundlesplus.fabric.BundlesPlusModClientEntry::initClient"
     ],
     "modmenu": [
       "dev.adox.bundlesplus.fabric.BundlesPlusModMenuEntry"
