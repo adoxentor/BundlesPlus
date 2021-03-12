@@ -71,7 +71,7 @@ public final class BundleEvents {
                     oldSelectedSlot = slot;
                     filling = true;
                     BundleServerMessage message = new BundleServerMessage(draggedItemStack, slotIndex, false, Screen.hasShiftDown());
-                    processMessage(message, player);
+//                    processMessage(message, player);
                     BundleResources.NETWORK.sendToServer(message);
                     return InteractionResult.FAIL;
 
@@ -83,7 +83,7 @@ public final class BundleEvents {
                     filling = false;
                     BundleServerMessage message = new BundleServerMessage(draggedItemStack, slotIndex, false, Screen.hasShiftDown());
                     BundleResources.NETWORK.sendToServer(message);
-                    processMessage(message, player);
+//                    processMessage(message, player);
                     return InteractionResult.FAIL;
                 } else {
                     oldSelectedSlot = null;
@@ -144,7 +144,7 @@ public final class BundleEvents {
                     oldSelectedSlot = slot;
                     filling = true;
                     BundleServerMessage message = new BundleServerMessage(draggedItemStack, slotIndex, false, Screen.hasShiftDown());
-                    processMessage(message, player);
+//                    processMessage(message, player);
                     BundleResources.NETWORK.sendToServer(message);
                     return InteractionResult.FAIL;
 
@@ -157,7 +157,7 @@ public final class BundleEvents {
                     filling = false;
                     BundleServerMessage message = new BundleServerMessage(draggedItemStack, slotIndex, false, Screen.hasShiftDown());
                     BundleResources.NETWORK.sendToServer(message);
-                    processMessage(message, player);
+//                    processMessage(message, player);
                     return InteractionResult.FAIL;
                 }
             }

@@ -1,6 +1,8 @@
 package dev.adox.bundlesplus.common.forge;
 
 import dev.adox.bundlesplus.common.PlatformUtil;
+import dev.adox.bundlesplus.common.mixin.MixinSlot;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen;
 import net.minecraft.core.NonNullList;
@@ -28,13 +30,19 @@ public class PlatformUtilImpl extends PlatformUtil {
 
 
     public static Slot getHoveredSlot(AbstractContainerScreen screen){
-        Slot slotUnderMouse = screen.getSlotUnderMouse();
-//        if(slotUnderMouse instanceof CreativeModeInventoryScreen.SlotWrapper) {
-//            return slotUnderMouse;
-//        }
-        return slotUnderMouse;
-
+        return screen.getSlotUnderMouse();
     }
+
+    public static int getSlotIndex(Slot slot) {
+        if (Minecraft.getInstance().player.isCreative()) {
+//            if (slot.getClass().equals(Slot.class)) {
+//                return slot.index;
+//            }
+            return slot.getSlotIndex();
+        }
+        return slot.index;
+    }
+
     @NotNull
     public static Supplier<Item> getBundleItem() {
         return BundleItemImpl::new;

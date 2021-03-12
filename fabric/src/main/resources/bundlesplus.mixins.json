@@ -6,7 +6,8 @@
   "mixins": [
   ],
   "client": [
-    "MixinAbstractContainerScreen"
+    "MixinAbstractContainerScreen",
+    "MixinSlotWrapper"
   ],
   "injectors": {
     "defaultRequire": 1

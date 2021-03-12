@@ -1,13 +1,13 @@
 package dev.adox.bundlesplus.common.util;
 
 
+import com.google.common.collect.Lists;
 import dev.adox.bundlesplus.common.BundlesPlusMod;
 import dev.adox.bundlesplus.common.PlatformUtil;
 import dev.adox.bundlesplus.common.init.BundleResources;
 import dev.adox.bundlesplus.common.item.BundleItem;
 import me.shedaniel.architectury.hooks.TagHooks;
 import net.minecraft.core.NonNullList;
-import net.minecraft.core.Registry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.resources.ResourceLocation;
@@ -122,10 +122,11 @@ public final class BundleItemUtils {
     /**
      * Add an Item Stack to a Bundle
      *
-     * @param bundle Bundle Item Stack
-     * @param stack  Item Stack to add
+     * @param bundle   Bundle Item Stack
+     * @param stack    Item Stack to add
+     * @param reversed
      */
-    public static void addItemStackToBundle(ItemStack bundle, ItemStack stack) {
+    public static void addItemStackToBundle(ItemStack bundle, ItemStack stack, boolean reversed) {
         if (isShulkerBox(bundle)) {
             CompoundTag blockEntityTag = bundle.getTagElement("BlockEntityTag");
             CompoundTag compoundnbt = blockEntityTag;
@@ -134,12 +135,11 @@ public final class BundleItemUtils {
             }
             if (!compoundnbt.contains("Items", 9)) {
                 compoundnbt.put("Items", new ListTag());
-                bundle.addTagElement("BlockEntityTag",compoundnbt);
+                bundle.addTagElement("BlockEntityTag", compoundnbt);
             }
             NonNullList<ItemStack> nonnulllist = PlatformUtil.loadAllItems(bundle);
 
-            for (int i = 0; i < nonnulllist.size(); i++) {
-                ItemStack itemStack = nonnulllist.get(i);
+            for (ItemStack itemStack : reversed ? Lists.reverse(nonnulllist) : nonnulllist) {
                 if (ItemStack.isSame(itemStack, stack) && itemStack.getCount() < itemStack.getMaxStackSize()) {
                     int j = itemStack.getCount() + stack.getCount();
                     int maxSize = stack.getMaxStackSize();
@@ -387,7 +387,7 @@ public final class BundleItemUtils {
             }
             if (!compoundnbt.contains("Items", 9)) {
                 compoundnbt.put("Items", new ListTag());
-                bundle.addTagElement("BlockEntityTag",compoundnbt);
+                bundle.addTagElement("BlockEntityTag", compoundnbt);
             }
 
             NonNullList<ItemStack> nonnulllist = PlatformUtil.loadAllItems(bundle);

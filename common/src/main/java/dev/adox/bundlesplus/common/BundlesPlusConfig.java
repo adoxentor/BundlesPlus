@@ -37,4 +37,7 @@ public class BundlesPlusConfig implements ConfigData {
     public Button BUTTON = Button.Right;
 
     public Boolean TOOLTIP = false;
+
+//    @ConfigEntry.Gui.Tooltip
+//    public Boolean NO_BUNDLE_BAD_IDEA = false;
 }

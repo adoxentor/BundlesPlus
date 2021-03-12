@@ -15,6 +15,14 @@ architectury {
 loom {
     mixinConfig "bundlesplus-forge.mixins.json"
 }
+minecraft {
+    runs {
+        client {
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+        }
+    }
+}
 
 processResources {
     filesMatching("META-INF/mods.toml") {
@@ -58,6 +66,7 @@ dependencies {
     modCompile("me.shedaniel.cloth:cloth-config-forge:${rootProject.cloth_config_version}")
     modCompile("me.shedaniel:architectury-forge:${rootProject.architectury_version}")
     annotationProcessor 'org.spongepowered:mixin:0.8.2:processor'
+    modCompile("vazkii.autoreglib:AutoRegLib:${arl_version}")
 
     implementation(project(path: ":common")) {
         transitive = false
@@ -69,7 +78,6 @@ dependencies {
         transitive = false
     }
 
-    modCompile("vazkii.autoreglib:AutoRegLib:${arl_version}")
 //    modRuntime("vazkii.quark:Quark:r2.4-276.1408"){
 //        transitive(false)
 //    }

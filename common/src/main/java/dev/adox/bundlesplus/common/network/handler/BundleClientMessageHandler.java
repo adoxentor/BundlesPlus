@@ -57,14 +57,15 @@ public class BundleClientMessageHandler {
         AbstractContainerMenu container = player.containerMenu;
         Slot slot = container.getSlot(message.slotId);
         if (message.empty) {
-            slot.set(message.slotStack);
+//            slot.set(message.slotStack);
 
             if (message.playEmptySound) {
                 player.playSound(SoundEvents.WOOL_BREAK, 1.0F, 1.0F);
             }
         } else {
             player.playSound(SoundEvents.ARMOR_EQUIP_LEATHER, 1.0F, 1.0F);
-//            player.inventory.setCarried(message.bundle);
+            if (player.isCreative())
+                player.inventory.setCarried(message.bundle);
         }
     }
 

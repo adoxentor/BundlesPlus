@@ -11,8 +11,8 @@ buildscript {
 import java.nio.file.*
 
 plugins {
-    id "architectury-plugin" version "3.0.97"
-    id "forgified-fabric-loom" version "0.6.78" apply false
+    id "architectury-plugin" version "3.0-SNAPSHOT"
+    id "forgified-fabric-loom" version "0.6-SNAPSHOT" apply false
 }
 
 architectury {

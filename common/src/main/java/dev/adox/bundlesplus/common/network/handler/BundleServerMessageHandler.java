@@ -8,7 +8,6 @@ import me.shedaniel.architectury.networking.NetworkManager;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 
@@ -58,28 +57,38 @@ public class BundleServerMessageHandler {
      */
     public static void processMessage(BundleServerMessage message, Player playerEntity) {
         AbstractContainerMenu container = playerEntity.containerMenu;
-        Slot slot = container.getSlot(message.slotId);
-        ItemStack slotStack = slot.getItem();
+        ItemStack slotStack;
+        Slot slot = null;
+        if (!playerEntity.isCreative()) {
+            slot = container.getSlot(message.slotId);
+            slotStack = slot.getItem();
+            message.bundle = playerEntity.inventory.getCarried();
+        } else{
+//            playerEntity.inventory.setCarried(message.bundle);
+            slotStack = playerEntity.inventory.items.get(message.slotId);
+        }
         boolean playEmptySound = false;
         if (message.empty) {
-            playEmptySound = !BundleItemUtils.isEmpty(message.bundle);
-            BundleItemUtils.emptyBundle(message.bundle, playerEntity);
-            slotStack = message.bundle;
+            playEmptySound = !BundleItemUtils.isEmpty(slotStack);
+            BundleItemUtils.emptyBundle(slotStack, playerEntity);
         } else {
             if (slotStack.isEmpty()) {
                 slotStack = BundleItemUtils.removeFirstItemStack(message.bundle, message.reversed);
             } else {
-                BundleItemUtils.addItemStackToBundle(message.bundle, slotStack);
-            }
-            if(!playerEntity.isCreative()) {
-                playerEntity.inventory.setCarried(message.bundle);
+                BundleItemUtils.addItemStackToBundle(message.bundle, slotStack, message.reversed);
             }
         }
-        slot.set(slotStack);
-
+        if(!playerEntity.isCreative()) {
+            slot.set(slotStack);
+            playerEntity.inventory.setCarried(message.bundle);
+        }else{
+//            playerEntity.inventory.setCarried(message.bundle);
+            playerEntity.inventory.items.set(message.slotId,slotStack);
+        }
         if (playerEntity instanceof ServerPlayer) {
             BundleResources.NETWORK.sendToPlayer((ServerPlayer) playerEntity, new BundleClientMessage(message.bundle, message.slotId, slotStack, message.empty, playEmptySound));
             ((ServerPlayer) playerEntity).refreshContainer(container);
+            playerEntity.inventoryMenu.broadcastChanges();
 
         }
     }

@@ -5,9 +5,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.util.LazyOptional;
@@ -27,7 +25,7 @@ public class BundleDropIn extends AbstractDropIn {
 
 	@Override
 	public ItemStack dropItemIn(Player player, ItemStack stack, ItemStack incoming) {
-		BundleItemUtils.addItemStackToBundle(stack,incoming);
+		BundleItemUtils.addItemStackToBundle(stack,incoming, false);
 		return stack;
 	}
 

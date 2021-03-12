@@ -4,6 +4,7 @@ import dev.adox.bundlesplus.common.PlatformUtil;
 import dev.adox.bundlesplus.common.mixin.MixinSlot;
 import dev.adox.bundlesplus.fabric.common.BundleItemImpl;
 import dev.adox.bundlesplus.fabric.mixin.MixinAbstractContainerScreen;
+import dev.adox.bundlesplus.fabric.mixin.MixinSlotWrapper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen;
@@ -17,15 +18,17 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
-public class PlatformUtilImpl extends PlatformUtil {
+public class PlatformUtilImpl {
     public static int getSlotIndex(Slot slot) {
         if (Minecraft.getInstance().player.isCreative()) {
             if (!(slot instanceof CreativeModeInventoryScreen.SlotWrapper)) {
-                return slot.index;
-//            return ((MixinSlot) slot).getSlot();
+//                return slot.index;
+            return ((MixinSlot) slot).getSlot();
 
             }
-            return ((MixinSlot) slot).getSlot();
+            else{
+                return ((MixinSlot)((MixinSlotWrapper) slot).getTarget()).getSlot();
+            }
         }
         return slot.index;
     }
