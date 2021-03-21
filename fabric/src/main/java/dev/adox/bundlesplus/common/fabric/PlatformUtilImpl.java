@@ -1,7 +1,6 @@
 package dev.adox.bundlesplus.common.fabric;
 
-import dev.adox.bundlesplus.common.PlatformUtil;
-import dev.adox.bundlesplus.common.mixin.MixinSlot;
+import dev.adox.bundlesplus.fabric.mixin.MixinSlot;
 import dev.adox.bundlesplus.fabric.common.BundleItemImpl;
 import dev.adox.bundlesplus.fabric.mixin.MixinAbstractContainerScreen;
 import dev.adox.bundlesplus.fabric.mixin.MixinSlotWrapper;

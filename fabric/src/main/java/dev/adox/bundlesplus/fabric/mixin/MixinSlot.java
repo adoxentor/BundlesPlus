@@ -1,4 +1,4 @@
-package dev.adox.bundlesplus.common.mixin;
+package dev.adox.bundlesplus.fabric.mixin;
 
 import net.minecraft.world.inventory.Slot;
 import org.spongepowered.asm.mixin.Mixin;

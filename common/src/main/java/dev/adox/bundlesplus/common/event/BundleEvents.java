@@ -3,7 +3,6 @@ package dev.adox.bundlesplus.common.event;
 import dev.adox.bundlesplus.common.BundlesPlusMod;
 import dev.adox.bundlesplus.common.PlatformUtil;
 import dev.adox.bundlesplus.common.init.BundleResources;
-import dev.adox.bundlesplus.common.mixin.MixinSlot;
 import dev.adox.bundlesplus.common.network.message.BundleServerMessage;
 import dev.adox.bundlesplus.common.util.BundleItemUtils;
 import me.shedaniel.architectury.event.events.client.ClientScreenInputEvent;
@@ -17,10 +16,6 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ResultSlot;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
-
-import java.lang.reflect.Field;
-
-import static dev.adox.bundlesplus.common.network.handler.BundleServerMessageHandler.processMessage;
 
 
 /**

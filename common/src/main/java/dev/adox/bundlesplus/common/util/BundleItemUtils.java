@@ -198,7 +198,13 @@ public final class BundleItemUtils {
 
         stack.setCount(stack.getCount() - stackToAdd.getCount());
         bundle.setTag(bundleTag);
-        bundleTag.putInt("Damage", bundle.getMaxDamage() - getBundleItemsCount(bundle));
+        int itemsCount = getBundleItemsCount(bundle);
+        if(itemsCount>0) {
+            bundleTag.putInt("Damage", bundle.getMaxDamage() - itemsCount);
+        }
+        else{
+            bundleTag.remove("Damage");
+        }
         bundle.setTag(bundleTag);
     }
 
@@ -233,7 +239,7 @@ public final class BundleItemUtils {
         ListTag items = bundleTag.getList(BundleResources.BUNDLE_ITEMS_LIST_NBT_RESOURCE_LOCATION, 10);
         items.clear();
         bundleTag.put(BundleResources.BUNDLE_ITEMS_LIST_NBT_RESOURCE_LOCATION, items);
-        bundleTag.putInt("Damage", bundle.getMaxDamage());
+        bundleTag.remove("Damage");
         bundle.setTag(bundleTag);
     }
 
@@ -433,7 +439,12 @@ public final class BundleItemUtils {
         items.remove(index);
         itemsFromBundle.remove(index);
         bundleTag.put(BundleResources.BUNDLE_ITEMS_LIST_NBT_RESOURCE_LOCATION, items);
-        bundleTag.putInt("Damage", bundle.getMaxDamage() - getItemsCount(itemsFromBundle));
+        int itemsCount = getItemsCount(itemsFromBundle);
+        if (itemsCount > 0) {
+            bundleTag.putInt("Damage", bundle.getMaxDamage() - itemsCount);
+        } else {
+            bundleTag.remove("Damage");
+        }
         bundle.setTag(bundleTag);
         return stack;
     }
