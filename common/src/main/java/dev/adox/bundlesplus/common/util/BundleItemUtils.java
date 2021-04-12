@@ -77,8 +77,10 @@ public final class BundleItemUtils {
                 && (getItemsFromBundle(bundle).isEmpty()
                 || getItemsFromBundle(bundle).stream().
                 anyMatch(itemStack -> itemStack.isEmpty()
-                    || (ItemStack.isSame(itemStack, stack) && getItemStackWeight(itemStack) < itemStack.getMaxStackSize()))
-            );
+                    || (ItemStack.isSame(itemStack, stack) &&
+                    ItemStack.tagMatches(itemStack, stack) &&
+                    (getItemStackWeight(itemStack) < itemStack.getMaxStackSize()))
+                ));
         }
 
         if (!isBundle(bundle) || isFull(bundle) || isIgnoredBundle(stack)) {
@@ -139,7 +141,9 @@ public final class BundleItemUtils {
 
             for (int i = 0; i < nonnulllist.size(); i++) {
                 ItemStack itemStack = nonnulllist.get(i);
-                if (ItemStack.isSame(itemStack, stack) && itemStack.getCount() < itemStack.getMaxStackSize()) {
+                if (ItemStack.isSame(itemStack, stack) &&
+                    ItemStack.tagMatches(itemStack, stack) &&
+                    itemStack.getCount() < itemStack.getMaxStackSize()) {
                     int j = itemStack.getCount() + stack.getCount();
                     int maxSize = stack.getMaxStackSize();
                     if (j <= maxSize) {
@@ -199,10 +203,9 @@ public final class BundleItemUtils {
         stack.setCount(stack.getCount() - stackToAdd.getCount());
         bundle.setTag(bundleTag);
         int itemsCount = getBundleItemsCount(bundle);
-        if(itemsCount>0) {
+        if (itemsCount > 0) {
             bundleTag.putInt("Damage", bundle.getMaxDamage() - itemsCount);
-        }
-        else{
+        } else {
             bundleTag.remove("Damage");
         }
         bundle.setTag(bundleTag);
@@ -319,7 +322,8 @@ public final class BundleItemUtils {
      * @return Item Stack for the Item or Empty Item Stack if not found
      */
     private static ItemStack getItemStackFor(ItemStack bundle, ItemStack stack) {
-        return getItemsFromBundle(bundle).stream().filter(x -> ItemStack.isSame(x, stack)).findFirst().orElse(ItemStack.EMPTY);
+        return getItemsFromBundle(bundle).stream().filter(x -> ItemStack.isSame(x, stack)
+            && ItemStack.tagMatches(x, stack)).findFirst().orElse(ItemStack.EMPTY);
     }
 
     /**
@@ -332,7 +336,7 @@ public final class BundleItemUtils {
     private static int getItemStackIndex(ItemStack bundle, ItemStack stack) {
         List<ItemStack> items = getItemsFromBundle(bundle);
         return IntStream.range(0, items.size())
-            .filter(i -> stack.sameItem(items.get(i)))
+            .filter(i -> stack.sameItem(items.get(i)) && ItemStack.tagMatches(stack, items.get(i)))
             .findFirst().orElse(-1);
     }
 
