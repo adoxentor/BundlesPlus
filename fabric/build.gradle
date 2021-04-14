@@ -62,7 +62,9 @@ dependencies {
 
     modCompile('curse.maven:not-enough-crashes-353890:3226331'){
         transitive = false
-
+    }
+    modCompile('curse.maven:all-stackable-404312:3146553'){
+        transitive = false
     }
 
     implementation(project(path: ":common")) {

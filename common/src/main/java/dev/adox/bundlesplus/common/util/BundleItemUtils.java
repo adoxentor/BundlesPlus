@@ -72,6 +72,10 @@ public final class BundleItemUtils {
      * @return True if the Item Stack can be added to a Bundle, False otherwise
      */
     public static boolean canAddItemStackToBundle(ItemStack bundle, ItemStack stack) {
+        if(bundle.getCount()>1){
+            return false;
+        }
+
         if (isShulkerBox(bundle)) {
             return (!isIgnoredShulker(stack))
                 && (getItemsFromBundle(bundle).isEmpty()
@@ -127,6 +131,9 @@ public final class BundleItemUtils {
      * @param stack  Item Stack to add
      */
     public static void addItemStackToBundle(ItemStack bundle, ItemStack stack) {
+        if(bundle.getCount()>1){
+            return;
+        }
         if (isShulkerBox(bundle)) {
             CompoundTag blockEntityTag = bundle.getTagElement("BlockEntityTag");
             CompoundTag compoundnbt = blockEntityTag;

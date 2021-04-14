@@ -57,8 +57,7 @@ public final class BundleEvents {
             int slotIndex = getSlotIndex(slot, player, container);
             if (slot.mayPickup(player)
                 && slot.isActive()
-                && slot.mayPlace(draggedItemStack)
-                && container.canTakeItemForPickAll(draggedItemStack, slot)) {
+                && slot.mayPlace(draggedItemStack)) {
                 if (slot.hasItem()
                     && BundleItemUtils.isBundle(draggedItemStack)
                     && BundleItemUtils.canAddItemStackToBundle(draggedItemStack, slotStack)
@@ -125,8 +124,7 @@ public final class BundleEvents {
                 && player != null
                 && slot.mayPickup(player)
                 && slot.isActive()
-                && slot.mayPlace(draggedItemStack)
-                && container.canTakeItemForPickAll(draggedItemStack, slot)) {
+                && slot.mayPlace(draggedItemStack)) {
                 if ((filling || oldSelectedSlot == null)
                     && slot.hasItem()
                     && BundleItemUtils.isBundle(draggedItemStack)
