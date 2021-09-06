@@ -3,6 +3,7 @@ package dev.adox.bundlesplus.forge;
 import dev.adox.bundlesplus.common.util.BundleItemUtils;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
@@ -19,12 +20,12 @@ import vazkii.arl.util.ItemNBTHelper;
 public class BundleDropIn extends AbstractDropIn {
 
 	@Override
-	public boolean canDropItemIn(Player player, ItemStack stack, ItemStack incoming) {
+	public boolean canDropItemIn(Player player, ItemStack stack, ItemStack incoming, Slot slot) {
 		return BundleItemUtils.canAddItemStackToBundle(stack,incoming);
 	}
 
 	@Override
-	public ItemStack dropItemIn(Player player, ItemStack stack, ItemStack incoming) {
+	public ItemStack dropItemIn(Player player, ItemStack stack, ItemStack incoming, Slot slot) {
 		BundleItemUtils.addItemStackToBundle(stack,incoming);
 		return stack;
 	}
