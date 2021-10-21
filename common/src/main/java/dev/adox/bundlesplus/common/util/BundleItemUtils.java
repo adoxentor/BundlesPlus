@@ -115,8 +115,7 @@ public final class BundleItemUtils {
     }
 
     public static boolean isShulkerBox(ItemStack itemStack) {
-        ResourceLocation shulkerLike = SHULKER_LIKE;
-        return machingTag(itemStack, shulkerLike);
+        return machingTag(itemStack, SHULKER_LIKE);
     }
 
     private static boolean machingTag(ItemStack itemStack, ResourceLocation shulkerLike) {
