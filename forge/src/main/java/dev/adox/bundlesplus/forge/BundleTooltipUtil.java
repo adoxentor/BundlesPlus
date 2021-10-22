@@ -47,7 +47,9 @@ public class BundleTooltipUtil {
      */
     @SubscribeEvent
     public static void onTooltipRender(final RenderTooltipEvent.Pre event) {
-        if ((event.getStack().getItem() instanceof BundleItem && BundlesPlusMod.CONFIG.get().BUNDLE_TOOLTIP) || (BundleItemUtils.isShulkerBox(event.getStack()) && BundlesPlusMod.CONFIG.get().SHULKER_TOOLTIP)) {
+        boolean bundle = (event.getStack().getItem() instanceof BundleItem && BundlesPlusMod.CONFIG.get().BUNDLE_TOOLTIP);
+        boolean shulker = (BundleItemUtils.isShulkerBox(event.getStack()) && BundlesPlusMod.CONFIG.get().SHULKER_TOOLTIP);
+        if (bundle || shulker) {
             event.setCanceled(true);
             BundleTooltipUtil.drawBundleTooltip(event);
         }
