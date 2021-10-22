@@ -8,6 +8,7 @@ import com.mojang.blaze3d.vertex.Tesselator;
 import com.mojang.math.Matrix4f;
 import dev.adox.bundlesplus.common.BundlesPlusMod;
 import dev.adox.bundlesplus.common.init.BundleResources;
+import dev.adox.bundlesplus.common.item.BundleItem;
 import dev.adox.bundlesplus.common.util.BundleItemUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
@@ -46,7 +47,9 @@ public class BundleTooltipUtil {
      */
     @SubscribeEvent
     public static void onTooltipRender(final RenderTooltipEvent.Pre event) {
-        if (BundleItemUtils.isBundle(event.getStack())&& BundlesPlusMod.CONFIG.get().TOOLTIP) {
+        boolean bundle = (event.getStack().getItem() instanceof BundleItem && BundlesPlusMod.CONFIG.get().BUNDLE_TOOLTIP);
+        boolean shulker = (BundleItemUtils.isShulkerBox(event.getStack()) && BundlesPlusMod.CONFIG.get().SHULKER_TOOLTIP);
+        if (bundle || shulker) {
             event.setCanceled(true);
             BundleTooltipUtil.drawBundleTooltip(event);
         }

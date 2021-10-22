@@ -36,7 +36,8 @@ public class BundlesPlusConfig implements ConfigData {
     @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
     public Button BUTTON = Button.Right;
 
-    public Boolean TOOLTIP = false;
+    public Boolean BUNDLE_TOOLTIP = false;
+    public Boolean SHULKER_TOOLTIP = false;
 
 //    @ConfigEntry.Gui.Tooltip
 //    public Boolean NO_BUNDLE_BAD_IDEA = false;
